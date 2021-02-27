@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Copyright (c) 2010, 2011 SAP AG and others.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+    SAP AG - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <version>1.0.0-SNAPSHOT</version>
+    <groupId>repoint</groupId>
+    <artifactId>repoint-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>Repoint RCP Parent</name>
+
+    <properties>
+        <!--tycho-version>0.24.0</tycho-versio-->
+        <tycho-version>1.2.0</tycho-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>repoint-eclipse-repository</module>
+        <module>com.documentum.devprog</module>
+        <module>com.documentum.feature</module>
+        <module>com.documentum.dfc</module>
+        <module>com.emc.repoint.scripts</module>
+        <!-- module>eclipse_3_6_helios</module -->
+        <!-- module>eclipse_4_5_mars</module -->
+        <!-- module>eclipse_4_7_oxygen</module -->
+        <module>eclipse_4_8_photon</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.emc.dfc</groupId>
+            <artifactId>dfc</artifactId>
+            <version>7.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.core.runtime</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.ui</artifactId>
+            <version>3.108.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.platform</groupId>
+                    <artifactId>org.eclipse.swt.gtk.linux.aarch64</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.eclipse.platform</groupId>
+                    <artifactId>org.eclipse.swt.gtk.linux.arm</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
+            <version>4.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <environments>
+                        <environment>
+                            <os>win32</os>
+                            <ws>win32</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <!--environment>
+                            <os>linux</os>
+                            <ws>gtk</ws>
+                            <arch>x86_64</arch>
+                        </environment-->
+                        <!--environment>
+                            <os>macosx</os>
+                            <ws>cocoa</ws>
+                            <arch>x86_64</arch>
+                        </environment>-->
+                    </environments>
+                    <target>
+                        <artifact>
+                            <groupId>repoint</groupId>
+                            <!-- artifactId>eclipse-helios</artifactId -->
+                            <!-- artifactId>eclipse-mars</artifactId -->
+                            <!-- artifactId>eclipse-oxygen</artifactId -->
+                            <artifactId>eclipse-photon</artifactId>
+                            <version>1.0.0-SNAPSHOT</version>
+                        </artifact>
+                    </target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

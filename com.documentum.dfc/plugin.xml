@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <runtime>
+        <library name="lib/config.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/aspectjrt.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/commons-lang-2.4.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/configservice-api.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/configservice-impl.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/dfcbase.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/dfc.jar">
+            <export name="*"/>
+        </library>
+        <library name="lib/log4j.jar">
+            <export name="*"/>
+        </library>
+    </runtime>
+</plugin>
