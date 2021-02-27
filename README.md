@@ -42,7 +42,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **EMC guys** - *Initial work* - [EMC](https://www.openhub.net/p/repoint)
 * **Karol Bryd** - *First try to resurrect the project* - [karolbe@github](https://github.com/karolbe/repoint-r)
 * **StraxGasser** - *Some fixes on [karolbe version](https://github.com/karolbe/repoint-r)* - [StraxGasser@github](https://github.com/StraxGasser/repoint-r)
-* **Schrankee** - *Current development* - [Schrankee@github](https://github.com/schrankee/repoint-r)
+* **Schrankee** - *Some fixes on [StraxGasser@github](https://github.com/StraxGasser/repoint-r)* - [Schrankee@github](https://github.com/schrankee/repoint-r)
+* **Parag4u** - *More updates to support latest versions of Documentum [Parag4u@github](https://github.com/parag4u/PRe-Point)*
 
 See also the list of [contributors](https://github.com/Schrankee/repoint-r/graphs/contributors) who participated in this project.
 
